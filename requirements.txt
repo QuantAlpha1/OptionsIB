@@ -1,0 +1,136 @@
+#############################################
+#           CORE DEPENDENCIES               #
+#############################################
+python>=3.8,<3.11  # Quant stack stability
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+llvmlite>=0.38.0  # For Numba acceleration
+
+#############################################
+#         GPU ACCELERATION (NVIDIA)         #
+#############################################
+# CUDA Toolkit 11.2+ REQUIRED
+cudatoolkit=11.2.*  # Must match NVIDIA driver version
+cudnn=8.1.*  # Deep learning primitives
+tensorflow-gpu>=2.8.0  # GPU-accelerated TF
+torch==1.12.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+cupy-cuda11x>=10.0.0  # NumPy GPU replacement
+nvtx>=0.2.6  # NVIDIA profiling tools
+nvidia-ml-py3>=7.352.0  # GPU stats monitoring
+
+[OPTIONAL_GPU]
+pytorch-lightning>=1.6.0  # Distributed training
+deepray>=0.1.0  # TF GPU extensions
+
+#############################################
+#          AI/ML FRAMEWORKS                 #
+#############################################
+scikit-learn>=1.0.0
+xgboost>=1.5.0
+lightgbm>=3.3.0
+keras-tuner>=1.1.0
+tensorflow-probability>=0.15.0
+gpflow>=2.5.0  # Gaussian processes
+
+#############################################
+#       QUANTITATIVE FINANCE CORE           #
+#############################################
+quantlib>=1.25  # C++ bindings
+pyfinlib>=0.1.4  # Option pricing
+arch>=5.3.0  # Volatility modeling
+riskparitypy>=0.0.4
+pyportfolioopt>=1.4.1
+cvxpy>=1.2.0
+
+#############################################
+#         DATA PROCESSING PIPELINE          #
+#############################################
+dask>=2021.10.0
+polars>=0.13.0
+h5py>=3.6.0  # HDF5 storage
+pyarrow>=6.0.0
+numba>=0.55.0  # JIT compiler
+
+#############################################
+#        MARKET DATA CONNECTORS             #
+#############################################
+ibapi>=9.81.1  # Interactive Brokers
+yfinance>=0.1.70
+ccxt>=2.6.85  # Crypto exchanges
+pyti>=0.2.0  # Technical indicators
+
+#############################################
+#       FEATURE ENGINEERING TOOLS           #
+#############################################
+statsmodels>=0.13.0
+ta-lib>=0.4.0  # Requires system libta-lib
+pykalman>=0.9.5
+keras-adversarial>=0.0.3
+pydensecrf>=1.0rc3
+
+#############################################
+#       QUANTUM COMPUTING SUPPORT           #
+#############################################
+qiskit>=0.34.0
+pennylane>=0.25.0
+
+#############################################
+#         SYSTEM INFRASTRUCTURE             #
+#############################################
+redis>=4.2.0  # Caching
+psutil>=5.8.0
+pyyaml>=6.0
+python-dotenv>=0.19.0
+loguru>=0.6.0  # Enhanced logging
+tqdm>=4.62.0  # Progress bars
+
+#############################################
+#         VISUALIZATION & DASHBOARDS        #
+#############################################
+plotly>=5.5.0
+dash>=2.0.0
+bokeh>=2.4.0
+seaborn>=0.11.0
+matplotlib>=3.5.0
+
+#############################################
+#       DEVELOPMENT & TESTING TOOLS         #
+#############################################
+pytest>=7.0.0
+pytest-cov>=3.0.0
+hypothesis>=6.36.0
+mypy>=0.930
+black>=22.1.0
+flake8>=4.0.0
+
+#############################################
+#       HARDWARE OPTIMIZATIONS              #
+#############################################
+# Intel MKL Acceleration
+mkl>=2022.0.0
+mkl-service>=2.4.0
+
+# AMD ROCm Support (Alternative to CUDA)
+# rocm-torch>=1.12.1  # Uncomment for AMD GPUs
+
+
+Installation Recommendations:
+bash
+
+# For CPU-only systems:
+pip install -r requirements.txt
+
+# For GPU-accelerated systems:
+pip install -r requirements.txt --install-option="--gpu"
+
+System Library Prerequisites:
+bash
+
+# Ubuntu/Debian
+sudo apt install -y \
+    libta-lib-dev \
+    libcudart11.2 \
+    libcublas11 \
+    libcufft10 \
+    libcurand10
