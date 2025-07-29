@@ -1,1 +1,19 @@
-Co
+C## 🔒 Source Code Access
+
+The core implementation files are available under restricted access due to proprietary algorithms. To request access:
+
+1. **Formal Request**: Email `quant.alpha1@proton.me` with:
+   - Your full name and affiliation
+   - Intended use case
+   - Signed NDA 
+
+2. **Evaluation Process**:
+   - 3-5 business day review period
+   - Requires company domain verification
+   - Approved academic/research use prioritized
+
+3. **Access Tiers**:
+   ```text
+   Tier 1: Algorithmic Framework (API-only)
+   Tier 2: Core Models (White-box)
+   Tier 3: Full System (With training pipelines)
